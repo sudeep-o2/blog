@@ -75,11 +75,12 @@ def detailPage(request,pk):
     context={'blog':blog}
     return render(request,'base/detail.html',context)
 
+@login_required(login_url='login')
 def deleteblog(request,pk):
     blog=Blog.objects.get(id=pk)
 
     if request.user!=blog.host:
-        return HttpResponse('you are not allowed to do the task')
+        return HttpResponse('you are not allowed to perform the task')
 
     if request.method=='POST':
         blog.delete()
@@ -87,6 +88,7 @@ def deleteblog(request,pk):
     
     return render(request,'base/delete.html',{'obj':blog})
 
+@login_required(login_url='login')
 def updateblog(request,pk):
     blog=Blog.objects.get(id=pk)
     form=BlogForm(instance=blog)
@@ -104,3 +106,4 @@ def updateblog(request,pk):
     context={'form':form}
 
     return render(request,'base/update.html',context)
+
