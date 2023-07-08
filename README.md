@@ -6,8 +6,12 @@ post
 1. Apis to create, read, update and delete the BlogPosts.
 2. Register/Login System for users visiting the Blog Site.
 3. Authentication for Users. (JWT based)
-## Functionalities-
+## Functionalities:-
 1. Homepage, where all posts are be listed.
 2. Details page, where all details of an individual blog are displayed.
 3. Users are only able to delete/update their own BlogPost.
 4. Logout functionality for users who are already logged in.
+## How to run this code in your system:-
+1. the project in your system.
+2.Activate the environment using command - env\scripts\activate.
+3.Start server using command - python manage.py runserver.
