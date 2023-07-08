@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+
+{% block start %}
+<div>
+
+    {% for blog in data %}
+    <div>
+        <div><h3><a href="{% url 'detail' blog.id %}"> {{blog.title}} </a></h3></div>
+    </div>
+    <hr>
+    {% endfor %}
+
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+
+{% block start %}
+<div>
+<h2>Upload-Blog</h2>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Upload</button>
+</form>
+
+
+</div>
+
+{% endblock %}

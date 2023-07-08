@@ -1,0 +1,44 @@
+
+<div>
+    <div style="float: right;">
+        <div style="float: right;">
+            <a href="{% url 'upload' %}"><small>Upload-Blog</small></a>
+        </div><br>
+    </div>
+    <p><a href="{% url 'home' %}">Home</a></p>
+    <h1>Blogs</h1>
+    </div>
+    <hr>
+    
+    <div class="container">
+    
+        {% if request.user.is_authenticated %}
+        <div style="float: right;">
+        <a href="{% url 'logout' %}">Logout</a>
+        </div>
+        {% else %}
+        <div>
+            <a href="{% url 'register' %}">Register</a>
+        </div>
+    
+        <div>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    
+       
+        {% endif %}
+    </div>
+    
+    
+    {% if request.user.is_authenticated %}
+    <div>
+        Welcome  - {{request.user.username}} </small>
+    </div>
+    {% endif %}
+    <hr>
+    
+   {% block start %}
+
+
+
+   {% endblock %}

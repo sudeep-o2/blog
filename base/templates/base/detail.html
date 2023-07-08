@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+
+{% block start %}
+
+<div>
+    <div> <h1>{{blog.title}}</h1>  </div>
+    <div>
+        <p> {{blog.description}} </p>
+    </div>
+    <a href="{% url 'update' blog.id %}" style="margin-right:5px">Update</a> 
+    <a href="{% url 'delete' blog.id %}" style="margin-left:10px">Delete</a>
+</div>
+
+
+{% endblock %}

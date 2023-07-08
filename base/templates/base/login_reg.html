@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+
+{% block start %}
+{% if stat == 'login' %}
+<div>
+    <h2>Login</h2>
+    <hr>
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        Email:<input type="text" name="email"><br><br>
+        Password:<input type="password" name="password"><br><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+</div>
+
+{% else %}
+
+<div>
+    <h2>Register</h2>
+    <hr>
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Register</button>
+
+    </form>
+
+</div>
+</div>
+{% endif %}
+
+{% endblock %}
