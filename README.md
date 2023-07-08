@@ -12,6 +12,10 @@ post
 3. Users are only able to delete/update their own BlogPost.
 4. Logout functionality for users who are already logged in.
 ## How to run this code in your system:-
-1. the project in your system.
-2.Activate the environment using command - env\scripts\activate.
-3.Start server using command - python manage.py runserver.
+1. Download the project using git clone in your system.
+2. Create a virtual environment in same same directory using command -> virtualenv env
+3. Activate the environment using command -> env\scripts\activate
+4. Once the environment is activated
+5. Run command -> pip install -r .\requirements.txt
+6. Runs local server using command -> python manage.py runserver
+
