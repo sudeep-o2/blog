@@ -17,3 +17,10 @@ def getDetail(request):
     blogs=Blog.objects.all()
     serializer = BlogSerializer(blogs,many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def getout(request,pk):
+    blogs=Blog.objects.filter(host=pk)
+    serializer = BlogSerializer(blogs,many=True)
+    return Response(serializer.data)
+
